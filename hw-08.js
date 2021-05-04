@@ -10,6 +10,7 @@ let currentEl = 0;
 
 const galleryMarkup = createGalleryMarkup(galleryItems);
 containerGallery.insertAdjacentHTML('afterbegin', galleryMarkup);
+
 function createGalleryMarkup(galleryItems) {
     return  galleryItems.map(({ preview, original, description }, i) => {
         return `<li class="gallery__item">
@@ -79,12 +80,13 @@ function onCloseModalEsc(evt) {
 function onNextImage(evt) {
   const ARR_RIGHT_CODE = 'ArrowRight';
   const ARR_LEFT_CODE = 'ArrowLeft';
-  console.log(currentEl);
+  
   if (evt.code === ARR_RIGHT_CODE) {
     currentEl += 1;
     } else if (evt.code === ARR_LEFT_CODE){
     currentEl -= 1;
   } else { return };
+  
   if (currentEl >= 0 && currentEl < galleryItems.length) {
     imageModalBox.src = `${galleryItems[currentEl].original}`;
     imageModalBox.alt = `${galleryItems[currentEl].description}`;
