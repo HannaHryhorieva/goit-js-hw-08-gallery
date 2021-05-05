@@ -32,7 +32,7 @@ function createGalleryMarkup(galleryItems) {
 
 containerGallery.addEventListener('click', onClickGallery);
 btnCloseModalBox.addEventListener('click', onCloseModal);
-overlayModalBox.addEventListener('click', onCloseModalOverlay);
+overlayModalBox.addEventListener('click', onCloseModal);
 
 
 function onClickGallery(evt) {
@@ -63,11 +63,11 @@ function onCloseModal() {
   
 };
 
-function onCloseModalOverlay(evt) {
- if (evt.target === evt.currentTarget) {
-   onCloseModal()
-    } 
-};
+// function onCloseModalOverlay(evt) {
+//  if (evt.target === evt.currentTarget) {
+//    onCloseModal()
+//     } 
+// };
 
 function onCloseModalEsc(evt) {
   const ESC_KEY_CODE = 'Escape';
@@ -92,5 +92,4 @@ function onNextImage(evt) {
     imageModalBox.alt = `${galleryItems[currentEl].description}`;
   } else {currentEl = -1};
 }
-  
 
